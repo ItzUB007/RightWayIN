@@ -1,0 +1,51 @@
+<div class="container">
+
+    <form (ngSubmit)="submit()" ngNativeValidate>
+        <div>
+            <label>So you're Searching for </label>
+            <input name="main" type="input" id="main" [(ngModel)]="maintext" placeholder="Enter Here" required><br>
+        </div>
+        <div>
+            <label>Is it a file?</label>
+            <input type="checkbox" name="isitfile"  [(ngModel)]="isitfile" [disabled]="isittext">
+        </div>
+        <div *ngIf="isitfile && (isittext == false)">
+            <label>Select the type of File</label>
+            <input type="text" name="filetype" list="filetype" [(ngModel)]="filetype" placeholder="Filetype" required>
+            <datalist id="filetype">
+                <option value="pdf">
+                <option value="txt">
+                <option value="mp3">
+                <option value="doc">
+                <option value="csv">
+                <option value="html">
+                <option value="php">
+                <option value="css">
+                <option value="ico">
+                <option value="docx">
+                <option value="psd">
+                <option value="ai">
+                <option value="avi">
+                <option value="apk">
+                <option value="msi">
+                <option value="exe">
+            </datalist>
+        </div><br>
+        <div>
+            <label>Is it on any website?</label>
+            <input type="checkbox" name="isitweb" [(ngModel)]="isitweb">
+        </div>
+        <div *ngIf="isitweb">
+            <label>Enter the Website name (Don't forget the .com or .in or .co.in)</label>
+            <input type="text" name="web" [(ngModel)]="website" placeholder="Website" required>
+        </div><br>
+        <div class="mb-3">
+            <label>Are you looking for some text?</label>
+            <input type="checkbox" name="isittext" [(ngModel)]="isittext">
+        </div>
+
+        <button type="button" class="btn btn-outline-dark" type="submit">Get the Syntax</button>
+    </form>
+    <h3>{{ this.thesearch }}</h3>
+
+</div>

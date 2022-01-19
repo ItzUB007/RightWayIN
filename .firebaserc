@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "right-way-in"
+  },
+  "targets": {
+    "right-way-in": {
+      "hosting": {
+        "RightWayIN": [
+          "right-way-in"
+        ]
+      }
+    }
+  }
+}
