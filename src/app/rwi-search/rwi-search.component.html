@@ -1,5 +1,15 @@
 <div class="container">
 
+    <div>
+        <h5>This app helps you search on google search more thoroughly by using inbuilt keywords of Google Search
+            (filetype:, site:, and intext:).
+        </h5>
+        <h5> You will be provided a text according to your inputs, just enter it in the google search and your good to
+            go!!!
+        </h5>
+    </div>
+    <br>
+
     <form (ngSubmit)="submit()" ngNativeValidate>
         <div>
             <label>So you're Searching for </label>
@@ -7,7 +17,7 @@
         </div>
         <div>
             <label>Is it a file?</label>
-            <input type="checkbox" name="isitfile"  [(ngModel)]="isitfile" [disabled]="isittext">
+            <input type="checkbox" name="isitfile" [(ngModel)]="isitfile" [disabled]="isittext">
         </div>
         <div *ngIf="isitfile && (isittext == false)">
             <label>Select the type of File</label>
